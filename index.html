@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Description-->
+    <meta name="description" content="Put your description here">
+
+    <!--Keywords-->
+    <meta name="keywords" content="Your keywords here">
+</head>
+<body>
+    <header class="fixed-header">
+        <div class="logo">
+            <!-- Replace the src attribute with the path to your logo -->
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav class="navbar" aria-label="Main Navigation">
+            <ul>
+                <!-- Update the href attributes and text to match your website structure -->
+                <li class="nav-section"><a href="#">Home</a></li>
+                <li class="nav-section"><a href="#">About</a></li>
+                <li class="nav-section"><a href="#">Services</a></li>
+                <li class="nav-section"><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="theme-switch">
+            <!-- Button to switch between light and dark themes -->
+            <button id="theme-toggle" title="Theme Switch">🌓 Switch to Dark Theme</button>
+            <!-- Button to retract or expand the sidebar -->
+            <button id="sidebar-toggle" title="Toggle Sidebar">Retract Sidebar</button>
+        </div>
+    </header>
+    <div class="content">
+        <!-- Sidebar-->
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <!-- Update the section display text to match your sections -->
+                    <li><a href="#Top">Go to top</a></li>
+                    <li><a href="#section1">Section 1</a></li>
+                    <li><a href="#section2">Section 2</a></li>
+                    <li><a href="#section3">Section 3</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main content-->
+        <main>
+            <!-- Update the content of each section as needed -->
+            <section id="Top">
+                <h2>Section 1</h2>
+                <p>Content for section 1.</p>
+            </section>
+            <section id="section1">
+                <h2>Section 2</h2>
+                <p>Content for section 2.</p>
+            </section>
+            <section id="section2">
+                <h2>Section 3</h2>
+                <p>Content for section 3.</p>
+            </section>
+            <section id="section3">
+                <h2>Section 4</h2>
+                <p>Content for section 4.</p>
+            </section>
+        </main>
+    </div>
+    <!-- JavaScript file -->
+    <script src="scripts/script.js"></script>
+</body>
+</html>

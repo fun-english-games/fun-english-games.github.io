@@ -1,0 +1,157 @@
+/* Basic reset and font settings */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; /* Change the font-family as needed */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #333; /* Change the background color for dark theme */
+    color: #f4f4f4; /* Change the text color for dark theme */
+}
+
+/* Header styles */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f4f4f4; /* Change the background color of the header */
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme header styles */
+body.dark-theme .fixed-header {
+    background-color: #444; /* Change the background color of the header for dark theme */
+    color: #f4f4f4; /* Change the text color of the header for dark theme */
+}
+
+/* Logo styles */
+.logo img {
+    height: 50px; /* Adjust the height of the logo as needed */
+}
+
+/* Navigation styles */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-section {
+    margin-right: 10px; /* Adjust the spacing between navigation items */
+}
+
+.nav-section a {
+    text-decoration: none;
+    color: #333; /* Change the text color of navigation links */
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme navigation styles */
+body.dark-theme .nav-section a {
+    color: #f4f4f4; /* Change the text color of navigation links for dark theme */
+}
+
+/* Hover styles for navigation links */
+.nav-section a:hover {
+    background-color: #555; /* Change the background color of navigation links on hover */
+    color: #fff; /* Change the text color of navigation links on hover */
+}
+
+/* Theme switch styles */
+.theme-switch {
+    margin-left: auto; /* Push the theme switch to the right */
+}
+
+/* Content styles */
+.content {
+    display: flex;
+    margin-top: 80px; /* Adjust this value based on the height of the header */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px; /* Adjust the width of the sidebar as needed */
+    background-color: #add8e6; /* Change the background color of the sidebar */
+    padding: 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 80px; /* Adjust this value based on the height of the header */
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    transition: transform 0.3s ease, background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme sidebar styles */
+body.dark-theme .sidebar {
+    background-color: #1a1a2e; /* Change the background color of the sidebar for dark theme */
+    color: #f4f4f4; /* Change the text color of the sidebar for dark theme */
+}
+
+/* Retracted sidebar styles */
+.sidebar.retracted {
+    transform: translateX(-200px); /* Retract the sidebar */
+}
+
+/* Sidebar navigation styles */
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 10px; /* Adjust the spacing between sidebar navigation items */
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333; /* Change the text color of sidebar navigation links */
+    transition: color 0.3s;
+}
+
+/* Dark theme sidebar navigation styles */
+body.dark-theme .sidebar nav ul li a {
+    color: #f4f4f4; /* Change the text color of sidebar navigation links for dark theme */
+}
+
+/* Hover styles for sidebar navigation links */
+.sidebar nav ul li a:hover {
+    color: #000; /* Change the text color of sidebar navigation links on hover */
+}
+
+/* Dark theme hover styles for sidebar navigation links */
+body.dark-theme .sidebar nav ul li a:hover {
+    color: #bbb; /* Change the text color of sidebar navigation links on hover for dark theme */
+}
+
+/* Main content styles */
+main {
+    margin-left: 240px; /* Adjust this value based on the width of the sidebar plus any padding */
+    padding: 20px;
+    flex: 1;
+    transition: margin-left 0.3s ease, background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme main content styles */
+body.dark-theme main {
+    background-color: #333; /* Change the background color of the main content for dark theme */
+    color: #f4f4f4; /* Change the text color of the main content for dark theme */
+}
+
+/* Full-width main content styles */
+main.full-width {
+    margin-left: 40px; /* Adjust this value based on the padding when sidebar is retracted */
+}
