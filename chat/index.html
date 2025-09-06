@@ -26,7 +26,7 @@
     const usernameInput = document.getElementById("username-input");
 
     async function loadMessages() {
-      const res = await fetch("http://localhost:3000/messages");
+      const res = await fetch("https://chat-backend-86cl.onrender.com");
       const messages = await res.json();
       chatBox.innerHTML = "";
       messages.forEach(m => {
@@ -44,7 +44,7 @@
       const username = usernameInput.value.trim();
       if (!text || !username) return;
 
-      await fetch("http://localhost:3000/messages", {
+      await fetch("https://chat-backend-86cl.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, text })
