@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Chat</title>
+  <style>
+    body { font-family: Arial; max-width: 600px; margin: 20px auto; }
+    #chat-box { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: scroll; }
+    .message { margin: 5px 0; padding: 5px; border-bottom: 1px solid #eee; }
+    .username { font-weight: bold; margin-right: 5px; }
+  </style>
+</head>
+<body>
+  <h2>Chat</h2>
+  <div id="chat-box"></div>
+  <form id="chat-form">
+    <input type="text" id="username-input" placeholder="Your name" required>
+    <input type="text" id="message-input" placeholder="Type a message..." required>
+    <button type="submit">Send</button>
+  </form>
+
+  <script>
+    const chatBox = document.getElementById("chat-box");
+    const form = document.getElementById("chat-form");
+    const input = document.getElementById("message-input");
+    const usernameInput = document.getElementById("username-input");
+
+    async function loadMessages() {
+      const res = await fetch("http://localhost:3000/messages");
+      const messages = await res.json();
+      chatBox.innerHTML = "";
+      messages.forEach(m => {
+        const div = document.createElement("div");
+        div.className = "message";
+        div.innerHTML = `<span class="username">${m.username}:</span> ${m.text} <small>(${m.created_at})</small>`;
+        chatBox.appendChild(div);
+      });
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      const username = usernameInput.value.trim();
+      if (!text || !username) return;
+
+      await fetch("http://localhost:3000/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, text })
+      });
+      input.value = "";
+      loadMessages();
+    });
+
+    // Refresh chat every 2s
+    setInterval(loadMessages, 2000);
+    loadMessages();
+  </script>
+</body>
+</html>
